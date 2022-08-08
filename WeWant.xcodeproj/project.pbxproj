@@ -11,6 +11,7 @@
 		635F661428A1721700CFBF7C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F661328A1721700CFBF7C /* ContentView.swift */; };
 		635F661628A1721800CFBF7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635F661528A1721800CFBF7C /* Assets.xcassets */; };
 		635F661928A1721800CFBF7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635F661828A1721800CFBF7C /* Preview Assets.xcassets */; };
+		635F662228A174DC00CFBF7C /* todoLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F662128A174DC00CFBF7C /* todoLists.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		635F661328A1721700CFBF7C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		635F661528A1721800CFBF7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		635F661828A1721800CFBF7C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		635F662128A174DC00CFBF7C /* todoLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoLists.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,9 @@
 		635F661028A1721700CFBF7C /* WeWant */ = {
 			isa = PBXGroup;
 			children = (
+				635F662028A1739500CFBF7C /* View */,
+				635F661F28A1738C00CFBF7C /* Model */,
 				635F661128A1721700CFBF7C /* WeWantApp.swift */,
-				635F661328A1721700CFBF7C /* ContentView.swift */,
 				635F661528A1721800CFBF7C /* Assets.xcassets */,
 				635F661728A1721800CFBF7C /* Preview Content */,
 			);
@@ -65,6 +68,22 @@
 				635F661828A1721800CFBF7C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		635F661F28A1738C00CFBF7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				635F662128A174DC00CFBF7C /* todoLists.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		635F662028A1739500CFBF7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				635F661328A1721700CFBF7C /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				635F661428A1721700CFBF7C /* ContentView.swift in Sources */,
+				635F662228A174DC00CFBF7C /* todoLists.swift in Sources */,
 				635F661228A1721700CFBF7C /* WeWantApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
