@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  WeWantView.swift
 //  WeWant
 //
 //  Created by Donghoon Bae on 2022/08/09.
@@ -57,7 +57,7 @@ struct EditView: View {
 }
 
 
-struct ContentView: View {
+struct WeWantView: View {
     
     @State private var searchText = ""
     
@@ -74,14 +74,17 @@ struct ContentView: View {
                 .listStyle(PlainListStyle())
                 
             }
-            .navigationTitle("TodoList")
+            .navigationTitle("WeWant")
+            .toolbar {
+                EditButton()
+            }
         }
         
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct WeWantView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        WeWantView()
     }
 }
