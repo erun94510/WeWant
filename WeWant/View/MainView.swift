@@ -17,12 +17,12 @@ struct MainView: View {
 //                    .background(scheme == .dark ? Color.black : Color.white)
 //                    .shadow(color: Color.primary.opacity(0.08), radius: 5, x: 0, y: 5)
                     .tabItem {
-                        Image(systemName: "")
+                        Image(systemName: "heart.text.square")
                         Text("WeWant")
                     }
                 WeHaveView()
                     .tabItem {
-                        Image(systemName: "")
+                        Image(systemName: "heart.fill")
                         Text("WeHave")
                     }
                 SettingsView()
