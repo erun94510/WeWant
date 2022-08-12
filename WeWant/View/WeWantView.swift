@@ -14,13 +14,13 @@ struct Item: Identifiable {
 }
 
 class Todoes: ObservableObject {
-    @Published var todoes: [Item]
+    @Published var todoes: [String]
 
     init() {
         self.todoes = [
-            Item(id: "0", label: "aaa"),
-            Item(id: "1", label: "bbb"),
-            Item(id: "2", label: "ccc")
+            "aaa",
+            "bbb",
+            "ccc"
         ]
     }
 }
@@ -62,8 +62,17 @@ struct SearchBar: View {
 
 struct DetailView: View {
     
+    @State private var todolists = ""
+    
     var body: some View {
-        Text("DetailView")
+        NavigationView {
+            Form {
+                Section(header: Text("INFO")) {
+                    TextField("TODOLIST", text: $todolists)
+                }
+            }
+        }
+        .navigationTitle(Text("\(todolists)"))
     }
 }
 
@@ -84,8 +93,8 @@ struct WeWantView: View {
             VStack{
                 SearchBar(text: $searchText)
                 List {
-                    ForEach(Todoes.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {
-                        searchText in NavigationLink($searchText, destination: DetailView())
+                    ForEach(Todoes().todoes.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {
+                        searchText in NavigationLink(searchText, destination: DetailView())
                     }
                     
                 }
