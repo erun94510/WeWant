@@ -7,10 +7,28 @@
 
 import SwiftUI
 
-var tesTodoes: [String] = [
-    "aaaaa",
-    "bbbbb"
-]
+struct Item: Identifiable {
+    var id: String
+    var label: String
+    
+}
+
+class Todoes: ObservableObject {
+    @Published var todoes: [Item]
+
+    init() {
+        self.todoes = [
+            Item(id: "0", label: "aaa"),
+            Item(id: "1", label: "bbb"),
+            Item(id: "2", label: "ccc")
+        ]
+    }
+}
+
+//var tesTodoes: [String] = [
+//    "aaaaa",
+//    "bbbbb"
+//]
 
 
 struct SearchBar: View {
@@ -66,8 +84,8 @@ struct WeWantView: View {
             VStack{
                 SearchBar(text: $searchText)
                 List {
-                    ForEach(tesTodoes.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {
-                        searchText in NavigationLink(searchText, destination: DetailView())
+                    ForEach(Todoes.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {
+                        searchText in NavigationLink($searchText, destination: DetailView())
                     }
                     
                 }
