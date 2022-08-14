@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63189EF828A90AE70052D56F /* DoneLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63189EF728A90AE70052D56F /* DoneLists.swift */; };
+		63189EFA28A90B160052D56F /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63189EF928A90B160052D56F /* ModelData.swift */; };
 		635F661228A1721700CFBF7C /* WeWantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F661128A1721700CFBF7C /* WeWantApp.swift */; };
 		635F661428A1721700CFBF7C /* WeWantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F661328A1721700CFBF7C /* WeWantView.swift */; };
 		635F661628A1721800CFBF7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635F661528A1721800CFBF7C /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63189EF728A90AE70052D56F /* DoneLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneLists.swift; sourceTree = "<group>"; };
+		63189EF928A90B160052D56F /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		635F660E28A1721700CFBF7C /* WeWant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeWant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635F661128A1721700CFBF7C /* WeWantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeWantApp.swift; sourceTree = "<group>"; };
 		635F661328A1721700CFBF7C /* WeWantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeWantView.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				635F662128A174DC00CFBF7C /* todoLists.swift */,
+				63189EF728A90AE70052D56F /* DoneLists.swift */,
+				63189EF928A90B160052D56F /* ModelData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,9 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				635F661428A1721700CFBF7C /* WeWantView.swift in Sources */,
+				63189EF828A90AE70052D56F /* DoneLists.swift in Sources */,
 				635F662228A174DC00CFBF7C /* todoLists.swift in Sources */,
 				63FEF54728A2AF8A00A9EDBE /* WeHaveView.swift in Sources */,
 				63FEF54D28A2B16600A9EDBE /* SettingsView.swift in Sources */,
+				63189EFA28A90B160052D56F /* ModelData.swift in Sources */,
 				63FEF54B28A2B12800A9EDBE /* MainView.swift in Sources */,
 				635F661228A1721700CFBF7C /* WeWantApp.swift in Sources */,
 			);
