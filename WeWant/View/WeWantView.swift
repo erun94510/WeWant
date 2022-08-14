@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-struct Item: Identifiable {
-    var id: String
-    var label: String
-    
-}
-
 class Todoes: ObservableObject {
     @Published var todoes: [String]
 
@@ -24,12 +18,6 @@ class Todoes: ObservableObject {
         ]
     }
 }
-
-//var tesTodoes: [String] = [
-//    "aaaaa",
-//    "bbbbb"
-//]
-
 
 struct SearchBar: View {
     
