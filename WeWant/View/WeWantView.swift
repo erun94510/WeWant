@@ -7,47 +7,17 @@
 
 import SwiftUI
 
-var tesTodoes: [String] = [
-    "aaaaa",
-    "bbbbb"
-]
-
-
-struct SearchBar: View {
-    
-    @Binding var text: String
-    
-    var body: some View {
-        HStack {
-            HStack {
-                Image(systemName: "magnifyingglass")
-                
-                TextField("Search", text: $text)
-                    .foregroundColor(.primary)
-                
-                if !text.isEmpty {
-                    Button(action: {
-                        self.text = ""}) {
-                        }
-                } else {
-                    EmptyView()
-                }
-            }
-            .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
-            .foregroundColor(.secondary)
-            .background(Color(.secondarySystemBackground))
-            .cornerRadius(10.0)
-        }
-        .padding(.horizontal)
-    }
-}
-
-struct DetailView: View {
-    
-    var body: some View {
-        Text("DetailView")
-    }
-}
+//class Todoes: ObservableObject {
+//    @Published var todoes: [String]
+//
+//    init() {
+//        self.todoes = [
+//            "aaa",
+//            "bbb",
+//            "ccc"
+//        ]
+//    }
+//}
 
 struct EditView: View {
     
@@ -56,33 +26,35 @@ struct EditView: View {
     }
 }
 
-
 struct WeWantView: View {
     
+    var wants: [Want] = WantList.wantList
     @State private var searchText = ""
+    @State private var isHidden: Bool = false
     
     var body: some View {
         NavigationView{
             VStack{
-                SearchBar(text: $searchText)
+                SearchBar(text: $searchText, isHidden: $isHidden)
                 List {
-                    ForEach(tesTodoes.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {
-                        searchText in NavigationLink(searchText, destination: DetailView())
+                    ForEach(wants.filter({ searchText.isEmpty ? true : $0.name.contains(searchText) }), id: \.id) { want in
+                        NavigationLink(destination: DetailView(want: want), label: {
+                            Text(want.name)
+                        }
+                        )
                     }
-                    
                 }
-                .listStyle(PlainListStyle())
-                
             }
-            .navigationTitle("WeWant")
+            
+            .navigationBarTitle("WeWant")
             .toolbar {
                 EditButton()
             }
+            
         }
-        
     }
+    
 }
-
 struct WeWantView_Previews: PreviewProvider {
     static var previews: some View {
         WeWantView()

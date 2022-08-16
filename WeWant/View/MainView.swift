@@ -11,6 +11,7 @@ struct MainView: View {
     
     @Environment(\.colorScheme) var scheme
     var body: some View {
+        
         TabView{
             WeWantView()
                 .background(scheme == .dark ? Color.black : Color.white)
@@ -27,6 +28,7 @@ struct MainView: View {
                     Label("Setting", systemImage: "gearshape")
                 }
         }
+        
     }
 }
 
