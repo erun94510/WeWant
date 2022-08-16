@@ -46,7 +46,7 @@ struct WeWantView: View {
                 }
             }
             
-            .navigationBarTitle("WeWant")
+            .navigationTitle("WeWant")
             .toolbar {
                 EditButton()
             }

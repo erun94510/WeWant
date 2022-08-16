@@ -10,16 +10,26 @@ import SwiftUI
 struct DetailView: View {
     
     var want: Want
+    @State var isdo = false
     
     var body: some View {
         NavigationView {
-            Section {
-                Text(want.name)
+            Form {
+                Section("Title") {
+                    Toggle(isOn: $isdo){
+                        Text("Done")
+                    }
+                    Text(want.name)
+                }
+                
+                Section("Do With") {
+                    Text("예슬")
+                }
             }
-
-            
         }
-        .navigationTitle(Text("HI"))
+        .toolbar {
+            EditButton()
+        }
     }
 }
 
