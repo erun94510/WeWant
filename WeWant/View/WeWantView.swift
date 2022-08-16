@@ -19,35 +19,6 @@ import SwiftUI
 //    }
 //}
 
-//struct SearchBar: View {
-//
-//    @Binding var text: String
-//
-//    var body: some View {
-//        HStack {
-//            HStack {
-//                Image(systemName: "magnifyingglass")
-//
-//                TextField("Search", text: $text)
-//                    .foregroundColor(.primary)
-//
-//                if !text.isEmpty {
-//                    Button(action: {
-//                        self.text = ""}) {
-//                        }
-//                } else {
-//                    EmptyView()
-//                }
-//            }
-//            .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
-//            .foregroundColor(.secondary)
-//            .background(Color(.secondarySystemBackground))
-//            .cornerRadius(10.0)
-//        }
-//        .padding(.horizontal)
-//    }
-//}
-
 struct EditView: View {
     
     var body: some View {
@@ -55,45 +26,22 @@ struct EditView: View {
     }
 }
 
-
-//struct WeWantView: View {
-//
-//    @State private var searchText = ""
-//
-//    var body: some View {
-//        NavigationView{
-//            VStack{
-//                SearchBar(text: $searchText)
-//                List {
-//                    ForEach(Todoes().todoes.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {
-//                        searchText in NavigationLink(searchText, destination: DetailView())
-//                    }
-//
-//                }
-//                .listStyle(PlainListStyle())
-//
-//            }
-//            .navigationTitle("WeWant")
-//            .toolbar {
-//                EditButton()
-//            }
-//        }
-//
-//    }
-//}
-
 struct WeWantView: View {
     
     var wants: [Want] = WantList.wantList
     @State private var searchText = ""
+    @State private var isHidden: Bool = false
     
     var body: some View {
         NavigationView{
             VStack{
-                SearchBar(text: $searchText)
+                SearchBar(text: $searchText, isHidden: $isHidden)
                 List {
-                    ForEach(wants.filter({ searchText.isEmpty ? true : $0.name.contains(searchText) }), id: \.id) { name in
-                        NavigationLink(name.name, destination: DetailView())
+                    ForEach(wants.filter({ searchText.isEmpty ? true : $0.name.contains(searchText) }), id: \.id) { want in
+                        NavigationLink(destination: DetailView(want: want), label: {
+                            Text(want.name)
+                        }
+                        )
                     }
                 }
             }

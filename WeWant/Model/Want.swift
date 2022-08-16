@@ -17,20 +17,22 @@ struct WantList {
     static let wantList = [
         Want(name:"aaa"),
         Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
+        Want(name:"bbb"),
         Want(name:"ccc")
     ]
 }
-
-//class todoLists: ObservableObject {
-//    @Published var todes = [Todo]()
-//}
-//
-//struct Todo: Identifiable {
-//    var id = UUID()
-//    var name: String
-//}
-//
-//var testTodoes = [
-//    Todo(name: "TEST1"),
-//    Todo(name: "TEST@")
-//]

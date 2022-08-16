@@ -9,11 +9,14 @@ import SwiftUI
 
 struct DetailView: View {
     
-    var wantName: [Want] = WantList.wantList
+    var want: Want
     
     var body: some View {
         NavigationView {
-            Text("TEST")
+            Section {
+                Text(want.name)
+            }
+
             
         }
         .navigationTitle(Text("HI"))
@@ -22,6 +25,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(want: WantList.wantList.first!)
     }
 }
