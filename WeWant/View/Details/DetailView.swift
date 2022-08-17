@@ -22,8 +22,9 @@ struct DetailView: View {
                 }
                 
                 Section("Do With") {
-                    Text("예슬")
+                    Text("홍길동")
                 }
+                
             }
         }
         .toolbar {

@@ -9,17 +9,23 @@ import SwiftUI
 
 struct WeHaveView: View {
     
+    var wants: [Want] = WantList.wantList
     @State private var searchText = ""
+    @State private var isHidden: Bool = false
     
     var body: some View {
+        
         NavigationView{
+            
             VStack{
-                
+                SearchBar(text: $searchText, isHidden: $isHidden)
                 List {
+                    ForEach(wants.filter({ searchText.isEmpty ? true : $0.name.contains(searchText) }), id: \.id) { want in
+//                        CardView(want: want)
+                        Text("TEST")
+                    }
                 }
-                
             }
-            .listStyle(PlainListStyle())
             .navigationTitle("WeHave")
             .toolbar {
                 EditButton()
