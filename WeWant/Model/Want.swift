@@ -19,11 +19,11 @@ struct Want: Identifiable {
 struct WantList {
     
     static let wantList = [
-        Want(name:"교복입고 에버랜드 가기", didu: true, date: "2022-08-17 00:00:00 +0000", image: ""),
+        Want(name:"교복입고 에버랜드 가기", didu: true, date: "2022-08-17 00:00:00 +0000", image: "IMG001"),
         Want(name:"교복입고 롯데월드 가기", didu: false, date: "2022-08-17 00:00:00 +0000", image: ""),
         Want(name:"한복입고 경복궁 가기", didu: false, date: "2022-08-17 00:00:00 +0000", image: ""),
-        Want(name:"아쿠아리움 가기", didu: true, date: "2022-08-17 00:00:00 +0000", image: ""),
-        Want(name:"동물원 가기", didu: true, date: "2022-08-17 00:00:00 +0000", image: ""),
+        Want(name:"아쿠아리움 가기", didu: true, date: "2022-08-17 00:00:00 +0000", image: "IMG002"),
+        Want(name:"동물원 가기", didu: true, date: "2022-08-17 00:00:00 +0000", image: "IMG003"),
         Want(name:"전주에서 한복입기", didu: false, date: "2022-08-17 00:00:00 +0000", image: ""),
         Want(name:"도시락싸서 소풍가기", didu: false, date: "2022-08-17 00:00:00 +0000", image: ""),
         Want(name:"일본가기", didu: false, date: "2022-08-17 00:00:00 +0000", image: ""),

@@ -21,8 +21,9 @@ struct WeHaveView: View {
                 SearchBar(text: $searchText, isHidden: $isHidden)
                 List {
                     ForEach(wants.filter({ searchText.isEmpty ? true : $0.name.contains(searchText) }), id: \.id) { want in
-//                        CardView(want: want)
-                        Text("TEST")
+                        if want.didu == true {
+                            CardView(want: want)
+                        }
                     }
                 }
             }

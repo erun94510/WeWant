@@ -19,17 +19,17 @@ struct CardView: View{
                       .aspectRatio(contentMode: .fit)
             HStack{
                 VStack(alignment: .leading){
-                    Text(want.name)
+                    Text("배동훈")
                         .font(.headline)
                         .foregroundColor(.secondary)
                     
-                    Text(want.date)
+                    Text(want.name)
                         .font(.title)
                         .fontWeight(.black)
                         .foregroundColor(.primary)
                         .lineLimit(3)
                     
-                    Text("배동훈")
+                    Text(want.date)
                         .font(.caption)
                         .foregroundColor(.secondary)
                     }
