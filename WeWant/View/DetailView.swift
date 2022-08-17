@@ -9,14 +9,13 @@ import SwiftUI
 
 struct DetailView: View {
     
-    var want: Want
-    @State var isdo = false
+    @State var want: Want
     
     var body: some View {
         NavigationView {
             Form {
                 Section("Title") {
-                    Toggle(isOn: $isdo){
+                    Toggle(isOn: $want.didu){
                         Text("Done")
                     }
                     Text(want.name)

@@ -20,11 +20,11 @@ struct WeHaveView: View {
                 
             }
             .listStyle(PlainListStyle())
+            .navigationTitle("WeHave")
+            .toolbar {
+                EditButton()
+            }
             
-        }
-        .navigationTitle("WeHave")
-        .toolbar {
-            EditButton()
         }
     }
     

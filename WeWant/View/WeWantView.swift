@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-//class Todoes: ObservableObject {
-//    @Published var todoes: [String]
-//
-//    init() {
-//        self.todoes = [
-//            "aaa",
-//            "bbb",
-//            "ccc"
-//        ]
-//    }
-//}
-
 struct EditView: View {
     
     var body: some View {
@@ -33,7 +21,9 @@ struct WeWantView: View {
     @State private var isHidden: Bool = false
     
     var body: some View {
+        
         NavigationView{
+            
             VStack{
                 SearchBar(text: $searchText, isHidden: $isHidden)
                 List {
@@ -45,7 +35,6 @@ struct WeWantView: View {
                     }
                 }
             }
-            
             .navigationTitle("WeWant")
             .toolbar {
                 EditButton()
