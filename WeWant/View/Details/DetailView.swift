@@ -15,9 +15,19 @@ struct DetailView: View {
         NavigationView {
             Form {
                 Section("Title") {
-                    Toggle(isOn: $want.didu){
-                        Text("Done")
+                    HStack {
+                        Text("Done?")
+                        Spacer()
+                        if want.didu == true {
+                            Text("YES")
+                        } else {
+                            Text("Not Yet")
+                        }
                     }
+                    
+                    //                    Toggle(isOn: $want.didu) {
+                    //                        Text("Done")
+                    //                    }
                     Text(want.name)
                 }
                 
@@ -27,11 +37,17 @@ struct DetailView: View {
                 
             }
         }
-        .toolbar {
-            EditButton()
-        }
+        //        .toolbar {
+        //            Button {
+        //                EditPageView(want: want)
+        //                Text("수정")
+        //            }
+        //            NavigationLink(destination: EditPageView(want: want)) {
+        //                Text("수정")
     }
 }
+
+
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {

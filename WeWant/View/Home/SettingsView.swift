@@ -25,13 +25,17 @@ struct SettingsView: View {
                 
                 Section("") {
                     HStack {
+                        Image(systemName: "lock")
                         Toggle("App Lock", isOn: $isLock)
                     }
                 }
                 
                 Section("ABOUT") {
                     NavigationLink(destination: LicenseView(), label: {
-                        Text("LICENSE")
+                        HStack{
+                            Image(systemName: "info.circle")
+                            Text("LICENSE")
+                        }
                     })
                 }
             }
