@@ -37,13 +37,12 @@ struct DetailView: View {
                 
             }
         }
-        //        .toolbar {
-        //            Button {
-        //                EditPageView(want: want)
-        //                Text("수정")
-        //            }
-        //            NavigationLink(destination: EditPageView(want: want)) {
-        //                Text("수정")
+        .toolbar {
+            
+            NavigationLink(destination: EditPageView(want: want)) {
+                Text("수정")
+            }
+        }
     }
 }
 

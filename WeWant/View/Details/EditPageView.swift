@@ -54,8 +54,15 @@ struct EditPageView: View {
                 }
             }
         }
+        .toolbar {
+            EditButton()
+        }
     }
 }
+
+//func EditButton() {
+//    
+//}
 
 struct EditPageView_Previews: PreviewProvider {
     static var previews: some View {
