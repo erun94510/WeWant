@@ -9,53 +9,67 @@ import SwiftUI
 
 struct EditPageView: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     @State var want: Want
-    //    @State var editname: String = ""
+//    @State var editname: String = ""
     
     var body: some View {
-        ZStack{
-            Form {
-                Section("") {
-                    Toggle(isOn: $want.didu) {
-                        Text("완료")
-                    }
-                }
-                Section("") {
-                    HStack {
-                        Text("Want")
-                        Spacer(minLength: 50)
-                        TextField("", text: $want.name)
-                    }
-                    //                DatePicker("Date", selection: $want.date)
-                    HStack {
-                        Text("Date")
-                        Spacer(minLength: 50)
-                        TextField("", text: $want.date)
-                    }
-                }
-                Section("") {
-                    if want.image != "" {
-                        Image(want.image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                        HStack{
-                            Image(systemName: "plus.circle")
-                            Text("add picture")
+        NavigationView {
+            ZStack{
+                Form {
+                    Section("") {
+                        Toggle(isOn: $want.didu) {
+                            Text("완료")
                         }
-                        .foregroundColor(.blue)
-                    }else {
-                        HStack{
-                            Image(systemName: "plus.circle")
-                            Text("add picture")
-                        }
-                        .foregroundColor(.blue)
                     }
-                    
+                    Section("") {
+                        HStack {
+                            Text("Want")
+                            Spacer(minLength: 50)
+                            TextField("", text: $want.name)
+                        }
+                        //                DatePicker("Date", selection: $want.date)
+                        HStack {
+                            Text("Date")
+                            Spacer(minLength: 50)
+                            TextField("", text: $want.date)
+                        }
+                    }
+                    Section("") {
+                        if want.image != "" {
+                            Image(want.image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            HStack{
+                                Image(systemName: "plus.circle")
+                                Text("add picture")
+                            }
+                            .foregroundColor(.blue)
+                        }else {
+                            HStack{
+                                Image(systemName: "plus.circle")
+                                Text("add picture")
+                            }
+                            .foregroundColor(.blue)
+                        }
+                        
+                    }
                 }
             }
-        }
-        .toolbar {
-            EditButton()
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Done") {
+//                        store.save()
+                        dismiss()
+                    }
+                }
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", role: .cancel) {
+                        dismiss()
+                    }
+                }
+            }
         }
     }
 }

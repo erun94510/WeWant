@@ -10,18 +10,19 @@ import SwiftUI
 struct DetailView: View {
     
     @State var want: Want
+    @State private var isShowingSheet = false
     
     var body: some View {
         NavigationView {
             Form {
                 Section("Title") {
                     HStack {
-                        Text("Done?")
+                        Text("Do")
                         Spacer()
                         if want.didu == true {
-                            Text("YES")
+                            Text("Done")
                         } else {
-                            Text("Not Yet")
+                            Text("Not Done")
                         }
                     }
                     
@@ -38,14 +39,22 @@ struct DetailView: View {
             }
         }
         .toolbar {
-            
-            NavigationLink(destination: EditPageView(want: want)) {
-                Text("수정")
+            Button(action: {
+                isShowingSheet.toggle()
+            }) {
+                Text("Edit")
+            }
+            .sheet(isPresented: $isShowingSheet,
+                   onDismiss: didDismiss) {
+                EditPageView(want: want)
             }
         }
     }
 }
 
+func didDismiss(){
+    
+}
 
 
 struct DetailView_Previews: PreviewProvider {
