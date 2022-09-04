@@ -44,17 +44,16 @@ struct DetailView: View {
             }) {
                 Text("Edit")
             }
-            .sheet(isPresented: $isShowingSheet,
-                   onDismiss: didDismiss) {
+            .sheet(isPresented: $isShowingSheet) {
                 EditPageView(want: want)
             }
         }
     }
 }
-
-func didDismiss(){
-    
-}
+//
+//func didDismiss(){
+//    
+//}
 
 
 struct DetailView_Previews: PreviewProvider {

@@ -74,10 +74,6 @@ struct EditPageView: View {
     }
 }
 
-//func EditButton() {
-//    
-//}
-
 struct EditPageView_Previews: PreviewProvider {
     static var previews: some View {
         EditPageView(want: WantList.wantList.first!)

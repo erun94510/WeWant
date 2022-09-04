@@ -22,7 +22,9 @@ struct WeHaveView: View {
                 List {
                     ForEach(wants.filter({ searchText.isEmpty ? true : $0.name.contains(searchText) }), id: \.id) { want in
                         if want.didu == true {
-                            CardView(want: want)
+                            NavigationLink(destination: StoryView(want: want), label: {
+                                CardView(want: want)
+                            })
                         }
                     }
                 }
