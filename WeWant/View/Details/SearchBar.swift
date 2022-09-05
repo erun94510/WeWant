@@ -16,7 +16,7 @@ struct SearchBar: View {
     @Binding var isHidden: Bool
     
     var body: some View {
-        HStack{
+        HStack {
             HStack {
                 Image(systemName: "magnifyingglass")
                 

@@ -44,13 +44,9 @@ struct DetailView: View {
                 EditPageView(want: want)
             }
         }
+        .navigationBarTitle("", displayMode: .inline)
     }
 }
-//
-//func didDismiss(){
-//    
-//}
-
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {

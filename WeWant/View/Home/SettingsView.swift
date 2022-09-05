@@ -11,7 +11,7 @@ struct SettingsView: View {
     
     @State private var isLock: Bool = false
     var body: some View {
-        NavigationView{
+        NavigationView {
             Form {
                 Section("Account") {
                     HStack {

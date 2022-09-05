@@ -18,10 +18,12 @@ struct StoryView: View {
                 Section("") {
                     HStack {
                         Text("Title : ")
+                        Spacer()
                         Text(want.name)
                     }
                     HStack {
                         Text("Date : ")
+                        Spacer()
                         Text(want.date)
                     }
                 }
@@ -48,6 +50,7 @@ struct StoryView: View {
                 EditPageView(want: want)
             }
         }
+        .navigationBarTitle("", displayMode: .inline)
     }
 }
 

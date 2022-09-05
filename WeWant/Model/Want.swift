@@ -73,3 +73,5 @@ func getNowTime(date: Date, format: String) -> String {
     return dateFormatter.string(from: date)
 }
 
+
+

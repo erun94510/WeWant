@@ -10,13 +10,12 @@ import SwiftUI
 struct EditPageView: View {
     
     @Environment(\.dismiss) private var dismiss
-    
+    @State var isNavigationBarHidden: Bool = true
     @State var want: Want
-//    @State var editname: String = ""
     
     var body: some View {
         NavigationView {
-            ZStack{
+            ZStack {
                 Form {
                     Section("") {
                         Toggle(isOn: $want.didu) {
@@ -29,7 +28,6 @@ struct EditPageView: View {
                             Spacer(minLength: 50)
                             TextField("", text: $want.name)
                         }
-                        //                DatePicker("Date", selection: $want.date)
                         HStack {
                             Text("Date")
                             Spacer(minLength: 50)
@@ -63,7 +61,6 @@ struct EditPageView: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Done") {
-//                        store.save()
                         dismiss()
                     }
                 }
@@ -73,6 +70,7 @@ struct EditPageView: View {
                     }
                 }
             }
+            .navigationBarTitle("", displayMode: .inline)
         }
     }
 }

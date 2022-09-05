@@ -17,8 +17,8 @@ struct CardView: View{
             Image(want.image)
                       .resizable()
                       .aspectRatio(contentMode: .fit)
-            HStack{
-                VStack(alignment: .leading){
+            HStack {
+                VStack(alignment: .leading) {
                     Text("배동훈")
                         .font(.headline)
                         .foregroundColor(.secondary)
@@ -34,11 +34,9 @@ struct CardView: View{
                         .foregroundColor(.secondary)
                     }
                 .layoutPriority(100)
-                Spacer()
-                              
+                Spacer()            
                 }
         .padding()
-          
         }
         .cornerRadius(10)
         .overlay(
@@ -46,10 +44,7 @@ struct CardView: View{
                 .stroke(Color(.sRGB,red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 1)
         )
         .padding([.top, .horizontal])
-        
     }
-
-    
 }
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {

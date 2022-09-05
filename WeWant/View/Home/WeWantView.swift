@@ -16,15 +16,15 @@ struct EditView: View {
 
 struct WeWantView: View {
     
-    var wants: [Want] = WantList.wantList
+    @State private var wants: [Want] = WantList.wantList
     @State private var searchText = ""
     @State private var isHidden: Bool = false
     
     var body: some View {
         
-        NavigationView{
+        NavigationView {
             
-            VStack{
+            VStack {
                 SearchBar(text: $searchText, isHidden: $isHidden)
                 List {
                     ForEach(wants.filter({ searchText.isEmpty ? true : $0.name.contains(searchText) }), id: \.id) { want in
@@ -34,16 +34,16 @@ struct WeWantView: View {
                             }
                         }
                     }
+                    .onDelete { wants.remove(atOffsets: $0) }
+                    .onMove { wants.move(fromOffsets: $0, toOffset: $1) }
                 }
             }
             .navigationTitle("WeWant")
             .toolbar {
                 EditButton()
             }
-            
         }
     }
-    
 }
 struct WeWantView_Previews: PreviewProvider {
     static var previews: some View {
