@@ -55,6 +55,9 @@ struct EditPageView: View {
                         }
                         
                     }
+                    Section("Memo") {
+                        TextEditor(text: $want.memo)
+                    }
                 }
             }
             .toolbar {

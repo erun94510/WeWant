@@ -28,9 +28,11 @@ struct WeWantView: View {
                 SearchBar(text: $searchText, isHidden: $isHidden)
                 List {
                     ForEach(wants.filter({ searchText.isEmpty ? true : $0.name.contains(searchText) }), id: \.id) { want in
-                        NavigationLink(destination: DetailView(want: want), label: {
-                            Text(want.name)
-                        })
+                        if want.didu == false {
+                            NavigationLink(destination: DetailView(want: want)) {
+                                Text(want.name)
+                            }
+                        }
                     }
                 }
             }

@@ -25,10 +25,6 @@ struct DetailView: View {
                             Text("Not Done")
                         }
                     }
-                    
-                    //                    Toggle(isOn: $want.didu) {
-                    //                        Text("Done")
-                    //                    }
                     Text(want.name)
                 }
                 

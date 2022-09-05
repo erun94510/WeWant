@@ -32,7 +32,7 @@ struct StoryView: View {
                               .cornerRadius(10)
                 }
                 Section("Memo") {
-                    Text("TEST")
+                    Text(want.memo)
                         .multilineTextAlignment(.leading)
                 }
             }
